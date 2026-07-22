@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 450" width="100%" height="100%">
+  <defs>
+    <!-- Arrow Marker for Edges -->
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 1.5 L 8 5 L 0 8.5 z" fill="#94a3b8" />
+    </marker>
+    <!-- Drop Shadow Filter for Nodes -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="5" stdDeviation="4" flood-color="#020617" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- Deep Slate Background -->
+  <rect width="100%" height="100%" fill="#0f172a" rx="10" />
+  
+  <!-- Grid Lines for Aesthetic Tech Vibe -->
+  <g stroke="#1e293b" stroke-width="0.5">
+    <line x1="50" y1="0" x2="50" y2="450" />
+    <line x1="150" y1="0" x2="150" y2="450" />
+    <line x1="250" y1="0" x2="250" y2="450" />
+    <line x1="350" y1="0" x2="350" y2="450" />
+    <line x1="450" y1="0" x2="450" y2="450" />
+    <line x1="550" y1="0" x2="550" y2="450" />
+    <line x1="650" y1="0" x2="650" y2="450" />
+    <line x1="0" y1="50" x2="700" y2="50" />
+    <line x1="0" y1="150" x2="700" y2="150" />
+    <line x1="0" y1="250" x2="700" y2="250" />
+    <line x1="0" y1="350" x2="700" y2="350" />
+  </g>
+
+  <!-- Title -->
+  <text x="350" y="35" text-anchor="middle" fill="#f8fafc" font-family="Segoe UI, sans-serif" font-size="16" font-weight="bold" letter-spacing="1">
+    CAUSAL DIRECTED ACYCLIC GRAPH (DAG)
+  </text>
+
+  <!-- ================= EDGES (PATHWAYS) ================= -->
+  <!-- Macro_Inflation -> Revenue_Growth -->
+  <path d="M 150 110 L 150 170" fill="none" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow)" />
+  
+  <!-- Macro_Inflation -> Debt_Service_Ratio -->
+  <path d="M 215 95 L 360 173" fill="none" stroke="#f43f5e" stroke-width="2.5" marker-end="url(#arrow)" />
+  
+  <!-- Market_Sentiment -> Corporate_Valuation -->
+  <path d="M 500 110 L 415 285" fill="none" stroke="#a855f7" stroke-width="2.5" marker-end="url(#arrow)" />
+  
+  <!-- Revenue_Growth -> Corporate_Valuation -->
+  <path d="M 175 220 L 290 288" fill="none" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arrow)" />
+  
+  <!-- Debt_Service_Ratio -> Corporate_Valuation -->
+  <path d="M 370 220 L 370 280" fill="none" stroke="#06b6d4" stroke-width="2.5" marker-end="url(#arrow)" />
+
+  <!-- ================= NODES ================= -->
+
+  <!-- NODE 1: Macro Inflation (Exogenous Shock) -->
+  <g transform="translate(70, 50)" filter="url(#shadow)">
+    <rect width="160" height="60" rx="8" fill="#1e1b4b" stroke="#f43f5e" stroke-width="2" />
+    <text x="80" y="27" text-anchor="middle" fill="#fda4af" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold">Macro Inflation</text>
+    <text x="80" y="45" text-anchor="middle" fill="#f43f5e" font-family="Segoe UI, sans-serif" font-size="10">(FRED CPI &amp; PPI)</text>
+  </g>
+
+  <!-- NODE 2: Market Sentiment (Exogenous Shock) -->
+  <g transform="translate(420, 50)" filter="url(#shadow)">
+    <rect width="160" height="60" rx="8" fill="#2e1065" stroke="#a855f7" stroke-width="2" />
+    <text x="80" y="27" text-anchor="middle" fill="#d8b4fe" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold">Market Sentiment</text>
+    <text x="80" y="45" text-anchor="middle" fill="#a855f7" font-family="Segoe UI, sans-serif" font-size="10">(GDELT &amp; News API)</text>
+  </g>
+
+  <!-- NODE 3: Revenue Growth (Corporate Driver) -->
+  <g transform="translate(70, 180)" filter="url(#shadow)">
+    <rect width="160" height="60" rx="8" fill="#172554" stroke="#3b82f6" stroke-width="2" />
+    <text x="80" y="27" text-anchor="middle" fill="#93c5fd" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold">Revenue Growth</text>
+    <text x="80" y="45" text-anchor="middle" fill="#3b82f6" font-family="Segoe UI, sans-serif" font-size="10">(yfinance statistics)</text>
+  </g>
+
+  <!-- NODE 4: Debt Service Ratio (Corporate Driver) -->
+  <g transform="translate(290, 180)" filter="url(#shadow)">
+    <rect width="160" height="60" rx="8" fill="#083344" stroke="#06b6d4" stroke-width="2" />
+    <text x="80" y="27" text-anchor="middle" fill="#67e8f9" font-family="Segoe UI, sans-serif" font-size="12" font-weight="bold">Debt Service Ratio</text>
+    <text x="80" y="45" text-anchor="middle" fill="#06b6d4" font-family="Segoe UI, sans-serif" font-size="10">(Balance Sheet &amp; Rates)</text>
+  </g>
+
+  <!-- NODE 5: Corporate Valuation (Target Outcome) -->
+  <g transform="translate(270, 295)" filter="url(#shadow)">
+    <rect width="200" height="70" rx="8" fill="#064e3b" stroke="#10b981" stroke-width="2.5" />
+    <text x="100" y="32" text-anchor="middle" fill="#6ee7b7" font-family="Segoe UI, sans-serif" font-size="13" font-weight="bold">Corporate Valuation</text>
+    <text x="100" y="52" text-anchor="middle" fill="#10b981" font-family="Segoe UI, sans-serif" font-size="10" font-weight="bold">Monte Carlo Target Output</text>
+  </g>
+
+  <!-- Legend / Info Tags -->
+  <g transform="translate(50, 395)" font-family="Segoe UI, sans-serif" font-size="10">
+    <circle cx="10" cy="10" r="5" fill="#f43f5e" />
+    <text x="22" y="13" fill="#94a3b8">Exogenous Shocks</text>
+    
+    <circle cx="170" cy="10" r="5" fill="#3b82f6" />
+    <text x="182" y="13" fill="#94a3b8">Mediating Drivers</text>
+    
+    <circle cx="310" cy="10" r="5" fill="#10b981" />
+    <text x="322" y="13" fill="#94a3b8">Simulation Target</text>
+  </g>
+</svg>

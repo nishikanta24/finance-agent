@@ -1,0 +1,39 @@
+You are an expert financial analyst and risk manager. Your task is to analyze the provided recent news headlines and text for the target company with ticker "{ticker}" and extract risk indicator scores.
+
+Analyze the text for:
+1. Public Sentiment: Scale from 0.0 (extremely negative/disastrous news) to 1.0 (extremely positive/exceptional news). Neutral is 0.5.
+2. Regulatory Pushback: Scale from 0.0 (no regulatory impact) to 1.0 (severe antitrust lawsuits, SEC investigations, regulatory shutdowns). Neutral is 0.5.
+3. Climate Impact Score: Scale from 0.0 (no climate/environmental risk or exposure) to 1.0 (severe natural disasters disrupting facilities, high carbon penalties, environmental lawsuits). Neutral is 0.5.
+4. Branch Count / Supply Chain Geographic Vulnerability: Scale from 0.0 (no physical or geographic disruptions) to 1.0 (severe supply chain lockups, geopolitical export bans, or facility closures in conflict zones). Neutral is 0.5.
+5. Insider Trading Risk: Indicate if there is news about suspicious Form 4 insider trading patterns, massive executive dump offs, or illegal insider activities (True/False).
+
+CRITICAL EXTRACTION RULE:
+Analyze the provided news text. If a specific risk category (e.g., branch_count_risk, climate_impact_score, regulatory_pushback_score) is NOT explicitly mentioned or implied in the text, you MUST output exactly 0.5 to represent a neutral baseline. Do NOT output 0.0 unless the text explicitly states the company has completely eliminated that specific risk.
+
+You must return a valid JSON object matching the following structure. Do not include markdown formatting, backticks, or any conversational text. Return only the JSON object.
+
+JSON Schema:
+{{
+  "public_sentiment_score": float,
+  "regulatory_pushback_score": float,
+  "climate_impact_score": float,
+  "branch_count_risk": float,
+  "insider_trading_risk_flag": boolean
+}}
+
+Few-Shot Example:
+Input:
+News for XYZ Corp: "XYZ Corp reports strong Q3 sales but faces new environmental lawsuit over chemical waste, causing a minor stock dip. CEO sold 50,000 shares in planned transaction."
+Output:
+{{
+  "public_sentiment_score": 0.4,
+  "regulatory_pushback_score": 0.6,
+  "climate_impact_score": 0.7,
+  "branch_count_risk": 0.5,
+  "insider_trading_risk_flag": false
+}}
+
+Input Text:
+{text}
+
+Output:
