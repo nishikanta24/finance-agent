@@ -1,6 +1,5 @@
 # Agentic Causal Intelligence & Monte Carlo Risk Engine 📈
 
-> **An Econometric AI Engine Combining Structural Causal Modeling (DoWhy), Vectorized Monte Carlo Simulations, and Large Language Models (LLMs) for Corporate Stress-Testing & Investment Risk Analysis.**
 
 ---
 
@@ -10,7 +9,7 @@ When evaluating investments in public companies, traditional financial models of
 1. **What specific macro & sentiment factors are driving a company's performance, and how do they cause changes in valuation?**
 2. **Under external economic shocks (e.g., inflation spikes, negative news sentiment), what is the best-case and worst-case range of potential valuation outcomes?**
 
-Coming from a non-technical background and exploring the frontiers of Artificial Intelligence, this project was built to bridge the gap between **Large Language Models (LLMs)** and **Structural Econometrics**. By marrying LLM-driven news extraction with **DoWhy Causal Graphs** and **Vectorized Monte Carlo Simulations**, this engine transforms unstructured market data into probabilistic risk distributions and boardroom-ready strategic briefs.
+Coming from a non-finance background and exploring the frontiers of Artificial Intelligence, this project was built to bridge the gap between **Large Language Models (LLMs)** and **Structural Econometrics**. By marrying LLM-driven news extraction with **DoWhy Causal Graphs** and **Vectorized Monte Carlo Simulations**, this engine transforms unstructured market data into probabilistic risk distributions and boardroom-ready strategic briefs.
 
 ---
 
